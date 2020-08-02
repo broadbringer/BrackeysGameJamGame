@@ -26,8 +26,7 @@ using UnityEngine;
 
 public class Application : MonoBehaviour
 {
-    public Inventory Inventory;
-    
+
     private static Application _instance;
 
     public static Application GetInstance()
@@ -38,6 +37,6 @@ public class Application : MonoBehaviour
     private void Start()
     {
         _instance = this;
-        Inventory = new Inventory();
+        
     }
 }
