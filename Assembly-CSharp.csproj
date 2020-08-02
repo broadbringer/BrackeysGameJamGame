@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Application.cs" />
+     <Compile Include="Assets\Scripts\TempScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/unityprojects/JamProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
