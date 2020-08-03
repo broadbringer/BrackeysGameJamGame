@@ -28,7 +28,8 @@ namespace Assets.Scripts.Game.Workers
             public Color TShortColor;
             public Color ShortsColor;
             public Color BodyColor;
-        
+            public Color HairColor;
+            
             public Sprite Hair;
 
             public Settings(CustomizationStorage storage)
@@ -36,7 +37,8 @@ namespace Assets.Scripts.Game.Workers
                 TShortColor = storage.Colors.PickRandom();
                 ShortsColor = storage.Colors.PickRandom();
                 BodyColor = storage.Colors.PickRandom();
-                //Hair = storage.Hairs.PickRandom();
+                HairColor = storage.Colors.PickRandom();
+                Hair = storage.Hairs.PickRandom();
             }
         }
 
@@ -47,7 +49,8 @@ namespace Assets.Scripts.Game.Workers
                 SetBodyColor(worker.Face, settings.BodyColor);
                 SetTShirtColor(worker.TShirt, settings.TShortColor);
                 SetShortsColor(worker.Shorts, settings.ShortsColor);
-                //SetHair(worker.Hair, settings.Hair);
+                SetHair(worker.Hair, settings.Hair);
+                SetHairColor(worker.Hair, settings.HairColor);
             }
             
             private void SetHair(WorkerPart part, Sprite hair)
@@ -66,6 +69,11 @@ namespace Assets.Scripts.Game.Workers
             }
 
             private void SetShortsColor(WorkerPart part, Color color)
+            {
+                part.SpriteRender.color = color;
+            }
+
+            private void SetHairColor(WorkerPart part, Color color)
             {
                 part.SpriteRender.color = color;
             }
