@@ -15,8 +15,29 @@ public class GameSession : MonoBehaviour
         _gameData = Application.GetInstance().GameSessionData;
         _eventsManager = Application.GetInstance().EventsManager;
         _eventsManager.CassettSpinnedByClickableWorker += AddToSpinnedCassets;
+        StartCoroutine(GameCycle());
     }
-    
+
+    private IEnumerator GameCycle()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Application.GetInstance().GameSessionData.OneHourInSeconds);
+            OnOneHourEnded();    
+        }
+    }
+
+    private void OnOneHourEnded()
+    {
+        if (_gameData.AIWorkers.Count != 0)
+        {
+            foreach (var worker in _gameData.AIWorkers)
+            {
+                var spinnedCassets = worker.Productivity + worker.ProductivityBonus;
+                AddToSpinnedCassets(spinnedCassets);
+            }
+        }
+    }
     private void AddToMoney(float value)
     {
         _gameData.Money += value;

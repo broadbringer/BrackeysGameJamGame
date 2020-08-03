@@ -1,4 +1,7 @@
-﻿namespace Assets.Scripts.Game.GameSession
+﻿using System.Collections.Generic;
+using Assets.Scripts.Game.Workers;
+
+namespace Assets.Scripts.Game.GameSession
 {
     [System.Serializable]
     public class GameSessionData
@@ -11,6 +14,11 @@
         public int WorkingPlacesAmount { get; set; }
         public int AvailableWorkingPlaces { get; set; }
         public float CassetDurabillity { get; private set; }
+
+        public readonly float OneHourInSeconds = 10f;
+        public readonly float OnDayInSecond = 240f;
+
+        public List<Worker> AIWorkers; 
         
         public GameSessionData()
         {
@@ -22,6 +30,7 @@
             AvailableWorkingPlaces = 0;
             CassetDurabillity = 30;
             SpinnedCassetts = 0;
+            AIWorkers = new List<Worker>();
         }
     }
 }

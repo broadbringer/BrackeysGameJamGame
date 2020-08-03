@@ -1,24 +1,28 @@
-﻿using Assets.Scripts.Game.Workers.Customization;
+﻿using System.Collections;
+using Assets.Scripts.Game.Workers.Customization;
 using UnityEngine;
+using Application = Assets.Scripts.Core.Application;
 
 namespace Assets.Scripts.Game.Workers
 {
     public class Worker : MonoBehaviour
     {
         public int Level;
-        public float Productivity;
-        public float ProductivityBonus;
+        public int Productivity;
+        public int ProductivityBonus;
     
         [SerializeField] private WorkerParts _parts;
     
         private Settings _partSettings;
-   
+        
         private void Start()
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
             var customizer = new WorkerCustomizer(_parts, _partSettings);
+            Productivity = 10;
+            ProductivityBonus = 10;
         }
-    
+        
         private class Settings
         {
             public Color TShortColor;

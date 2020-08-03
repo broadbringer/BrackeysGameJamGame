@@ -4,9 +4,9 @@ namespace Assets.Scripts.Game.Workers.Customization
 {
     public class WorkerPart : MonoBehaviour
     {
-        public SpriteRenderer SpriteRender { get; private set; }
+        public SpriteRenderer SpriteRender { get; set; }
 
-        private void Start()
+        private void Awake()
         {
             SpriteRender = GetComponent<SpriteRenderer>();
         }
