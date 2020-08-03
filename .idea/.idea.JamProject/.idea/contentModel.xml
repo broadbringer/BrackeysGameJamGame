@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Broadbringer\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -9,6 +9,27 @@
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="Application.cs" t="Include" />
+            <e p="EventsManager.cs" t="Include" />
+          </e>
+          <e p="Extentions" t="Include">
+            <e p="EnumerableExtension.cs" t="Include" />
+          </e>
+          <e p="Game" t="Include">
+            <e p="GameSession" t="Include">
+              <e p="GameSession.cs" t="Include" />
+              <e p="GameSessionData.cs" t="Include" />
+            </e>
+            <e p="Workers" t="Include">
+              <e p="ClickableWorker.cs" t="Include" />
+              <e p="Customization" t="Include">
+                <e p="CustomizationStorage.cs" t="Include" />
+                <e p="WorkerPart.cs" t="Include" />
+              </e>
+              <e p="Worker.cs" t="Include" />
+            </e>
+            <e p="WorkPlace" t="Include">
+              <e p="WorkPlace.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>

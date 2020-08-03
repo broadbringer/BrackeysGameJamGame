@@ -57,7 +57,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Application.cs" />
-     <Compile Include="Assets\Scripts\TempScript.cs" />
+     <Compile Include="Assets\Scripts\Core\EventsManager.cs" />
+     <Compile Include="Assets\Scripts\Extentions\EnumerableExtension.cs" />
+     <Compile Include="Assets\Scripts\Game\GameSession\GameSession.cs" />
+     <Compile Include="Assets\Scripts\Game\GameSession\GameSessionData.cs" />
+     <Compile Include="Assets\Scripts\Game\Workers\ClickableWorker.cs" />
+     <Compile Include="Assets\Scripts\Game\Workers\Customization\CustomizationStorage.cs" />
+     <Compile Include="Assets\Scripts\Game\Workers\Customization\WorkerPart.cs" />
+     <Compile Include="Assets\Scripts\Game\Workers\Worker.cs" />
+     <Compile Include="Assets\Scripts\Game\WorkPlace\WorkPlace.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/unityprojects/JamProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
