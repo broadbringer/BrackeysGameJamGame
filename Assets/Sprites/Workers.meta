@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Workers.meta
 guid: d9e4199167793ce46a8a5e37e22ca36c
 folderAsset: yes
+=======
+guid: b8861c7e3c771ea40932c84ec3e8e06b
+>>>>>>> d3395914c7622eee73a99aa0771dde0292ee1766:Assets/Scenes/TestSceene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
