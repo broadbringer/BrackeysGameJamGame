@@ -9,13 +9,12 @@ using Application = Assets.Scripts.Core.Application;
 
 public class GameSession : MonoBehaviour
 {
-    private GameSessionData _gameData;
+    [SerializeField] private GameSessionData _gameData;
     private EventsManager _eventsManager;
     private GameEconomy _gameEconomy;
 
     private void Start()
     {
-       
         _gameData = Application.GetInstance().GameSessionData;
         _eventsManager = Application.GetInstance().EventsManager;
         _eventsManager.CassettSpinnedByClickableWorker += AddToSpinnedCassets;

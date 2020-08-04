@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Game.Workers;
+using UnityEngine;
 
 namespace Assets.Scripts.Game.GameSession
 {
@@ -13,14 +14,15 @@ namespace Assets.Scripts.Game.GameSession
     [System.Serializable]
     public class GameSessionData
     {
-        public float Money { get; set; }
-        public float TimeLeft { get; set; }
-        public int CurrentDay { get; set; }
-        public int SpinnedCassettsGoal { get; set; }
-        public int SpinnedCassetts { get; set; }
-        public int WorkingPlacesAmount { get; set; }
-        public int AvailableWorkingPlaces { get; set; }
-        public float CassetDurabillity { get; private set; }
+        public float Money; // {get;set;}
+        public float TimeLeft; //{ get; set; }
+        public int CurrentDay; //{ get; set; }
+        [Header("Cassets Goal")]
+        public int SpinnedCassettsGoal; //{ get; set; }
+        public int SpinnedCassetts; //{ get; set; }
+        public int WorkingPlacesAmount; // { get; set; }
+        public int AvailableWorkingPlaces; //{ get; set; }
+        public float CassetDurabillity; //{ get; private set; }
 
         public readonly float OneHourInSeconds = 30f;
         public readonly float OneDayInSecond = 240f;
