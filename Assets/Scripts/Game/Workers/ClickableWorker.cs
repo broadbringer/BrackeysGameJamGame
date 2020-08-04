@@ -10,7 +10,7 @@ namespace Assets.Scripts.Game.Workers
         private EventsManager _eventsManager;
         private float CurrentCassetDurabillity;
         private Calculator _calculator;
-        
+
         public float Productivity;
         
         private void Start()
@@ -23,11 +23,13 @@ namespace Assets.Scripts.Game.Workers
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            
             SpinCassette();
         }
 
         private void SpinCassette()
         {
+            
             if (Productivity > CurrentCassetDurabillity)
             {
                 var cassettSurplus = _calculator.GetScrolledCassetSurplus(Productivity);

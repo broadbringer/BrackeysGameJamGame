@@ -34,10 +34,10 @@ namespace Assets.Scripts.Game.Workers
 
             public Settings(CustomizationStorage storage)
             {
-                TShortColor = storage.Colors.PickRandom();
-                ShortsColor = storage.Colors.PickRandom();
-                BodyColor = storage.Colors.PickRandom();
-                HairColor = storage.Colors.PickRandom();
+                TShortColor = storage.ClothesColors.PickRandom();
+                ShortsColor = storage.ClothesColors.PickRandom();
+                BodyColor = storage.BodyColors.PickRandom();
+                HairColor = storage.HairColors.PickRandom();
                 Hair = storage.Hairs.PickRandom();
             }
         }

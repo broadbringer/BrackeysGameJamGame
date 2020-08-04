@@ -10,6 +10,13 @@ namespace Assets.Scripts.Core
         {
             CassettSpinnedByClickableWorker?.Invoke(value);
         }
-         
+
+        public event Action DayIsOver;
+
+        public void OnDayIsOver()
+        {
+            DayIsOver?.Invoke();
+        }
+
     }
 }

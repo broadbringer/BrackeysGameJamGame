@@ -5,25 +5,35 @@ using Assets.Scripts.Game.GameSession;
 using UnityEngine;
 using Application = Assets.Scripts.Core.Application;
 
+
+
 public class GameSession : MonoBehaviour
 {
     private GameSessionData _gameData;
     private EventsManager _eventsManager;
-    
+    private GameEconomy _gameEconomy;
+
     private void Start()
     {
+       
         _gameData = Application.GetInstance().GameSessionData;
         _eventsManager = Application.GetInstance().EventsManager;
         _eventsManager.CassettSpinnedByClickableWorker += AddToSpinnedCassets;
-        StartCoroutine(GameCycle());
+        _eventsManager.DayIsOver += OnOneDayEnded;
+        _gameEconomy = new GameEconomy {DayIndex = _gameData.CurrentDay};
+        _gameData.DayState = DayState.DayContinue;
+        StartCoroutine(StartOneHourTimer());
     }
 
-    private IEnumerator GameCycle()
+    private IEnumerator StartOneHourTimer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Application.GetInstance().GameSessionData.OneHourInSeconds);
-            OnOneHourEnded();    
+            if (_gameData.DayState == DayState.DayContinue)
+            {
+                yield return new WaitForSeconds(Application.GetInstance().GameSessionData.OneHourInSeconds);
+                OnOneHourEnded(); 
+            }
         }
     }
 
@@ -38,23 +48,28 @@ public class GameSession : MonoBehaviour
             }
         }
     }
-    private void AddToMoney(float value)
+    private void OnOneDayEnded()
     {
-        _gameData.Money += value;
+        AddToPlayedDays();
+        _gameEconomy.SetMoney(_gameData);
+        _gameEconomy.SetNextDayCassettGoal(_gameData);
+        _gameEconomy.DayIndex++;
     }
-
-    private void AddToPlayedDays(int value = 1)
+    
+    
+    private void AddToPlayedDays()
     {
-        _gameData.PlayedDays += value;
+        const int value = 1;
+        _gameData.CurrentDay += value;
     }
-
-    private void AddToOnDayAvailableCassets(int value)
-    {
-        _gameData.OnDayAvailableCassetts += value;
-    }
-
+    
     private void AddToSpinnedCassets(int value)
     {
+        if (_gameData.SpinnedCassettsGoal == _gameData.SpinnedCassetts)
+        {
+            return;
+        }
         _gameData.SpinnedCassetts += value;
     }
 }
+

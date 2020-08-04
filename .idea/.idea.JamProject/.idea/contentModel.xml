@@ -16,9 +16,16 @@
           </e>
           <e p="Game" t="Include">
             <e p="GameSession" t="Include">
+              <e p="GameEconomy.cs" t="Include" />
               <e p="GameSession.cs" t="Include" />
               <e p="GameSessionData.cs" t="Include" />
               <e p="WorkerCreator.cs" t="Include" />
+            </e>
+            <e p="ScriptableObjects" t="Include">
+              <e p="ValuesList.cs" t="Include" />
+            </e>
+            <e p="View" t="Include">
+              <e p="UIView.cs" t="Include" />
             </e>
             <e p="Workers" t="Include">
               <e p="ClickableWorker.cs" t="Include" />
@@ -26,7 +33,7 @@
                 <e p="CustomizationStorage.cs" t="Include" />
                 <e p="WorkerPart.cs" t="Include" />
               </e>
-              <e p="TimeConverter.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
               <e p="Worker.cs" t="Include" />
             </e>
             <e p="WorkPlace" t="Include">

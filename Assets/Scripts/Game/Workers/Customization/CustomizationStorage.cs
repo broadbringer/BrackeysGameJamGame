@@ -7,9 +7,13 @@ namespace Assets.Scripts.Game.Workers.Customization
   public class CustomizationStorage : ScriptableObject
   {
     [SerializeField] private List<Sprite> _hairs;
-    [SerializeField] private List<Color> _colors;
-  
+    [SerializeField] private List<Color> _bodyColors;
+    [SerializeField] private List<Color> _hairColors;
+    [SerializeField] private List<Color> _clothesColors;
+    
     public List<Sprite> Hairs => _hairs;
-    public List<Color> Colors => _colors;
+    public List<Color> BodyColors => _bodyColors;
+    public List<Color> HairColors => _hairColors;
+    public List<Color> ClothesColors => _clothesColors;
   }
 }
