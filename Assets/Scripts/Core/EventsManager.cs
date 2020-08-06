@@ -18,5 +18,12 @@ namespace Assets.Scripts.Core
             DayIsOver?.Invoke();
         }
 
+
+        public event Action<Tool> BuyButtonPressed;
+
+        public void OnBuyButtonPressed(Tool item)
+        {
+            BuyButtonPressed?.Invoke(item);
+        }
     }
 }

@@ -1,26 +1,75 @@
 ﻿using System.Collections;
+using Assets.Scripts.Core;
 using Assets.Scripts.Game.Workers.Customization;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Application = Assets.Scripts.Core.Application;
 
 namespace Assets.Scripts.Game.Workers
 {
-    public class Worker : MonoBehaviour
+    public class Worker : MonoBehaviour, IPointerClickHandler, IWorker
     {
         public int Level;
-        public int Productivity;
-        public int ProductivityBonus;
-    
+        public float Productivity { get; set; }
+        public float CurrentCassetDurabillity { get; set; }
+        public Tool WorkItem { get; set; }
+        public float ProductivityBonus;
+        private Calculator _calculator;
+        
         [SerializeField] private WorkerParts _parts;
     
         private Settings _partSettings;
-        
+        private EventsManager _eventsManager;
         private void Start()
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
             var customizer = new WorkerCustomizer(_parts, _partSettings);
             Productivity = 10;
             ProductivityBonus = 10;
+            _eventsManager = Application.GetInstance().EventsManager;
+            _calculator = new Calculator();
+        }
+        
+        public void SetWorkItem(Tool item)
+        {
+            WorkItem = item;
+            Productivity = item.ProductivityBonus;
+        }
+        
+        public void SpinCassette()
+        {
+            if (Productivity > Application.GetInstance().GameSessionData.CassetDurabillity)
+            {
+                var cassettSurplus = _calculator.GetScrolledCassetSurplus(Productivity);
+                if ((int)cassettSurplus == 0)
+                {
+                    var scrolledCassettAmount = _calculator.GetScrolledCassetAmount(Productivity);
+                    _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
+                    RefreshDurabillity();
+                }
+                else
+                {
+                    var scrolledCassettAmount = _calculator.GetScrolledCassetAmount(Productivity);
+                    _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
+                    RefreshDurabillity();
+                    CurrentCassetDurabillity -= cassettSurplus;
+                }
+            }
+            else
+            {
+                CurrentCassetDurabillity -= Productivity;
+                if (CurrentCassetDurabillity <= 0)
+                {
+                    var scrolledCassettAmount = 1;
+                    _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
+                    RefreshDurabillity();
+                }
+            }
+        }
+
+        private void RefreshDurabillity()
+        {
+            CurrentCassetDurabillity = Application.GetInstance().GameSessionData.CassetDurabillity;
         }
         
         private class Settings
@@ -87,6 +136,15 @@ namespace Assets.Scripts.Game.Workers
             public WorkerPart Face;
             public WorkerPart TShirt;
             public WorkerPart Shorts;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                Application.GetInstance().GameSessionData.Equipment.Open(this);
+                
+            }
         }
     }
 }

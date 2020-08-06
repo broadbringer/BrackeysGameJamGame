@@ -5,8 +5,6 @@ using Assets.Scripts.Game.GameSession;
 using UnityEngine;
 using Application = Assets.Scripts.Core.Application;
 
-
-
 public class GameSession : MonoBehaviour
 {
     [SerializeField] private GameSessionData _gameData;
@@ -42,11 +40,11 @@ public class GameSession : MonoBehaviour
         {
             foreach (var worker in _gameData.AIWorkers)
             {
-                var spinnedCassets = worker.Productivity + worker.ProductivityBonus;
-                AddToSpinnedCassets(spinnedCassets);
+                worker.SpinCassette();
             }
         }
     }
+    
     private void OnOneDayEnded()
     {
         AddToPlayedDays();
@@ -54,7 +52,6 @@ public class GameSession : MonoBehaviour
         _gameEconomy.SetNextDayCassettGoal(_gameData);
         _gameEconomy.DayIndex++;
     }
-    
     
     private void AddToPlayedDays()
     {
@@ -64,8 +61,9 @@ public class GameSession : MonoBehaviour
     
     private void AddToSpinnedCassets(int value)
     {
-        if (_gameData.SpinnedCassettsGoal == _gameData.SpinnedCassetts)
+        if (_gameData.SpinnedCassetts >= _gameData.SpinnedCassettsGoal)
         {
+            _gameData.SpinnedCassetts = _gameData.SpinnedCassettsGoal;
             return;
         }
         _gameData.SpinnedCassetts += value;

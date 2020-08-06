@@ -24,7 +24,17 @@
             <e p="ScriptableObjects" t="Include">
               <e p="ValuesList.cs" t="Include" />
             </e>
+            <e p="UpgradeSystem" t="Include">
+              <e p="Inventory.cs" t="Include" />
+              <e p="InventoryItem.cs" t="Include" />
+              <e p="Shop.cs" t="Include" />
+              <e p="ShopItem.cs" t="Include" />
+              <e p="Tool.cs" t="Include" />
+            </e>
             <e p="View" t="Include">
+              <e p="InventoryView.cs" t="Include" />
+              <e p="MouseInputChecker.cs" t="Include" />
+              <e p="ShopView.cs" t="Include" />
               <e p="UIView.cs" t="Include" />
             </e>
             <e p="Workers" t="Include">
@@ -33,6 +43,7 @@
                 <e p="CustomizationStorage.cs" t="Include" />
                 <e p="WorkerPart.cs" t="Include" />
               </e>
+              <e p="IWorker.cs" t="Include" />
               <e p="Timer.cs" t="Include" />
               <e p="Worker.cs" t="Include" />
             </e>

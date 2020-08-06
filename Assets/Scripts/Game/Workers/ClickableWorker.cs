@@ -5,13 +5,14 @@ using Application = Assets.Scripts.Core.Application;
 
 namespace Assets.Scripts.Game.Workers
 {
-    public class ClickableWorker : MonoBehaviour, IPointerClickHandler
+    public class ClickableWorker : MonoBehaviour, IPointerClickHandler, IWorker
     {
         private EventsManager _eventsManager;
-        private float CurrentCassetDurabillity;
         private Calculator _calculator;
 
-        public float Productivity;
+        public Tool WorkItem { get; set; } = null;
+        public float Productivity { get; set; }
+        public float CurrentCassetDurabillity { get; set; }
         
         private void Start()
         {
@@ -23,17 +24,27 @@ namespace Assets.Scripts.Game.Workers
         
         public void OnPointerClick(PointerEventData eventData)
         {
-            
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                Application.GetInstance().GameSessionData.Equipment.Open(this);
+                return;
+            }
             SpinCassette();
+            
         }
 
-        private void SpinCassette()
+        public void SetWorkItem(Tool item)
         {
-            
-            if (Productivity > CurrentCassetDurabillity)
+            WorkItem = item;
+            Productivity = item.ProductivityBonus;
+        }
+        
+        public void SpinCassette()
+        {
+            if (Productivity > Application.GetInstance().GameSessionData.CassetDurabillity)
             {
                 var cassettSurplus = _calculator.GetScrolledCassetSurplus(Productivity);
-                if (cassettSurplus == 0)
+                if ((int)cassettSurplus == 0)
                 {
                     var scrolledCassettAmount = _calculator.GetScrolledCassetAmount(Productivity);
                     _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);

@@ -26,8 +26,11 @@ namespace Assets.Scripts.Core
 
     public class Application : MonoBehaviour
     {
+        
         private static Application _instance;
 
+        public InventoryView InventoryView;
+        
         public GameSessionData GameSessionData { get; private set; }
         public EventsManager EventsManager { get; private set; }
     

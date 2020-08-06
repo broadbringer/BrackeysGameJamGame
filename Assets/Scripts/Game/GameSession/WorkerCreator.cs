@@ -9,10 +9,10 @@ public class WorkerCreator : MonoBehaviour
     public Worker WorkerPrefab;
 
     private float time;
-    
+    public Transform Position;
     public void Create()
     {
-        var worker = Instantiate(WorkerPrefab, new Vector3(), Quaternion.identity);
+        var worker = Instantiate(WorkerPrefab, Position.position, Quaternion.identity);
         Application.GetInstance().GameSessionData.AIWorkers.Add(worker);
     }
 }
