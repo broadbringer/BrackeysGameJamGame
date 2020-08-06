@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Game\View\MouseInputChecker.cs" />
      <Compile Include="Assets\Scripts\Game\View\ShopView.cs" />
      <Compile Include="Assets\Scripts\Game\View\UIView.cs" />
+     <Compile Include="Assets\Scripts\Game\View\WorkPlaceView.cs" />
      <Compile Include="Assets\Scripts\Game\Workers\ClickableWorker.cs" />
      <Compile Include="Assets\Scripts\Game\Workers\Customization\CustomizationStorage.cs" />
      <Compile Include="Assets\Scripts\Game\Workers\Customization\WorkerPart.cs" />

@@ -36,6 +36,7 @@
               <e p="MouseInputChecker.cs" t="Include" />
               <e p="ShopView.cs" t="Include" />
               <e p="UIView.cs" t="Include" />
+              <e p="WorkPlaceView.cs" t="Include" />
             </e>
             <e p="Workers" t="Include">
               <e p="ClickableWorker.cs" t="Include" />

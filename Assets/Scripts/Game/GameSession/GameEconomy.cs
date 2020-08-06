@@ -9,35 +9,17 @@ public class GameEconomy
    public int DayIndex;
    private float DayIncome;
    private int DayCassetGoal;
-   
-   private List<int> _deltasForDayCassetsGoal = new List<int>
+
+   private float _delta = 0.5f;
+   public GameEconomy()
    {
-      4,15,120,240,480
-   };
+      DayCassetGoal = 20;
+   }
 
    #region CassetsGoalEconomy
    private int GetDayCassettGoalInSuccessfulDay()
    {
-      if (DayIndex < 7)
-      {
-         DayCassetGoal += _deltasForDayCassetsGoal[0];
-      }
-      else if (DayIndex >= 7 && DayIndex < 12)
-      {
-         DayCassetGoal += _deltasForDayCassetsGoal[1];
-      }
-      else if (DayIndex >= 12 && DayIndex < 18)
-      {
-         DayCassetGoal += _deltasForDayCassetsGoal[2];
-      }
-      else if (DayIndex >= 18 && DayIndex < 23)
-      {
-         DayCassetGoal += _deltasForDayCassetsGoal[3];
-      }
-      else
-      {
-         DayCassetGoal += _deltasForDayCassetsGoal[4];
-      }
+      DayCassetGoal += (int)(DayCassetGoal * _delta);
 
       return DayCassetGoal;
    }
@@ -45,7 +27,8 @@ public class GameEconomy
    private int GetDayCassettGoalInUnsuccessfulDay(GameSessionData gameData)
    {
       var delta = gameData.SpinnedCassettsGoal - gameData.SpinnedCassetts;
-      return delta;
+      DayCassetGoal -= delta;
+      return DayCassetGoal;
    }
    public void SetNextDayCassettGoal(GameSessionData gameData)
    {

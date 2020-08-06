@@ -12,16 +12,17 @@ public class Timer : MonoBehaviour
     private GameSessionData _gameData;
     private float dayTime;
     private EventsManager _eventsManager;
-    public float TimeScale = 1;
+    public float TimeMultiplier = 4;
     
     private void Start()
     {
+        Debug.Log("Timer Worker");
         _gameData = Application.GetInstance().GameSessionData;
         _eventsManager = Application.GetInstance().EventsManager;
+        Time.timeScale = TimeMultiplier;
     }
     public void Update()
     {
-        Time.timeScale = TimeScale;
         if (_gameData.TimeLeft > 0)
         {
             CountDown();

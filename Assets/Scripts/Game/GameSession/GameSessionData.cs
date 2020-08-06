@@ -24,8 +24,8 @@ namespace Assets.Scripts.Game.GameSession
         public int AvailableWorkingPlaces{ get; set; }
         public float CassetDurabillity{ get; private set; }
 
-        public readonly float OneHourInSeconds = 15f;
-        public readonly float OneDayInSecond = 120f;
+        public readonly float OneHourInSeconds = 60f;
+        public readonly float OneDayInSecond = 480f;
         public readonly float OneCassettPrice = 0.01f;
         
         public List<Worker> AIWorkers;

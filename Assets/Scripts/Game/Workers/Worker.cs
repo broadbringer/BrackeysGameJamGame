@@ -20,11 +20,12 @@ namespace Assets.Scripts.Game.Workers
     
         private Settings _partSettings;
         private EventsManager _eventsManager;
+        
         private void Start()
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
             var customizer = new WorkerCustomizer(_parts, _partSettings);
-            Productivity = 60;
+            Productivity = 4.5f;
             ProductivityBonus = 10;
             _eventsManager = Application.GetInstance().EventsManager;
             _calculator = new Calculator();
@@ -34,7 +35,7 @@ namespace Assets.Scripts.Game.Workers
         public void SetWorkItem(Tool item)
         {
             WorkItem = item;
-            Productivity = item.ProductivityBonus;
+            Productivity = item.ProductivityBonus * 3;
         }
         
         public void SpinCassette()

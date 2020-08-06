@@ -16,7 +16,7 @@ namespace Assets.Scripts.Game.Workers
         
         private void Start()
         {
-            Productivity = 1;
+            Productivity = 1.5f;
             CurrentCassetDurabillity = Application.GetInstance().GameSessionData.CassetDurabillity;
             _calculator = new Calculator();
             _eventsManager = Application.GetInstance().EventsManager;

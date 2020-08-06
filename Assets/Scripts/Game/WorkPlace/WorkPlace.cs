@@ -4,38 +4,53 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Application = Assets.Scripts.Core.Application;
 
+
 public class WorkPlace : MonoBehaviour,IPointerClickHandler
 {
-    private GameSessionData _gameData;
-    private EventsManager _eventsManager;
-        
-    public float Price;
-    public bool IsCanBuy = false;
-    public float AvailableDayToBuy;
+    private PlaceState _state;
+
+    
+    [SerializeField] private int _dayToOpen;
+    [SerializeField] private WorkPlaceView _view;
+    public int DayToOpen => _dayToOpen;
+
+    [SerializeField] private float _price;
+
+    public float Price => _price;
 
     public Transform Position;
     
     private void Start()
     {
-        _gameData = Application.GetInstance().GameSessionData;
-        _eventsManager = Application.GetInstance().EventsManager;
-        _eventsManager.DayIsOver += OnNewDayStarted;
         Position = GetComponent<Transform>();
+        _state = PlaceState.Close;
     }
 
-    private void OnNewDayStarted()
+    
+    public void ChangeState()
     {
-        //сделать проверку на то, что бы сделать этот стол активным
-        if (AvailableDayToBuy >= _gameData.CurrentDay)
-        {
-            //делаем активным данный стол, наверное будем слои менять и цвет
-            _eventsManager.DayIsOver -= OnNewDayStarted;
-        }
+        _state = PlaceState.Open;
     }
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        //Открываем UI, который привязан к этому объекту. Делаем проверку на то, какой сегодня день. Если день позвоялет купить, делаем кнопку Buy активной.
+        if (_state == PlaceState.Close)
+        {
+            _view.gameObject.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+
+
+    private enum PlaceState
+    {
+        Open,
+        Close
     }
 }
 
