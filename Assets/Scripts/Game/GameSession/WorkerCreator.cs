@@ -8,11 +8,18 @@ public class WorkerCreator : MonoBehaviour
 {
     public Worker WorkerPrefab;
 
+    private int WorkerCreated = 0;
+    private int MaxCount = 4;
+    public List<WorkPlace> Positions;
     private float time;
-    public Transform Position;
     public void Create()
     {
-        var worker = Instantiate(WorkerPrefab, Position.position, Quaternion.identity);
-        Application.GetInstance().GameSessionData.AIWorkers.Add(worker);
+        if (WorkerCreated < MaxCount)
+        {
+            var worker = Instantiate(WorkerPrefab, Positions[WorkerCreated].Position.position, Quaternion.identity);
+            Application.GetInstance().GameSessionData.AIWorkers.Add(worker);
+            WorkerCreated++;
+        }
+        
     }
 }

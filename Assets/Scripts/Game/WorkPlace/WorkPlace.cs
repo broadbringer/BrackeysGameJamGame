@@ -12,13 +12,15 @@ public class WorkPlace : MonoBehaviour,IPointerClickHandler
     public float Price;
     public bool IsCanBuy = false;
     public float AvailableDayToBuy;
-    
+
+    public Transform Position;
     
     private void Start()
     {
         _gameData = Application.GetInstance().GameSessionData;
         _eventsManager = Application.GetInstance().EventsManager;
         _eventsManager.DayIsOver += OnNewDayStarted;
+        Position = GetComponent<Transform>();
     }
 
     private void OnNewDayStarted()

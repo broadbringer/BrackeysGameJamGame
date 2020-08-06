@@ -24,10 +24,11 @@ namespace Assets.Scripts.Game.Workers
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
             var customizer = new WorkerCustomizer(_parts, _partSettings);
-            Productivity = 10;
+            Productivity = 60;
             ProductivityBonus = 10;
             _eventsManager = Application.GetInstance().EventsManager;
             _calculator = new Calculator();
+            CurrentCassetDurabillity = Application.GetInstance().GameSessionData.CassetDurabillity;
         }
         
         public void SetWorkItem(Tool item)

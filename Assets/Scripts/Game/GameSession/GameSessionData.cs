@@ -38,7 +38,7 @@ namespace Assets.Scripts.Game.GameSession
             Money = 1000;
             TimeLeft = OneDayInSecond;
             CurrentDay = 1;
-            SpinnedCassettsGoal = 2;
+            SpinnedCassettsGoal = 20;
             WorkingPlacesAmount = 0;
             AvailableWorkingPlaces = 0;
             CassetDurabillity = 30;
