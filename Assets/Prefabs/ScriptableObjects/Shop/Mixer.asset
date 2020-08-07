@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a202f33b33a474c999b449f9c888e0, type: 3}
   m_Name: Mixer
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: cd92f29448953be438fafb5a0d2dd912, type: 3}
+  Sprite: {fileID: 21300000, guid: 714595670be175247bafa7e0cfa57aa4, type: 3}
   Name: Mixer
   ProductivityBonus: 15
-  Price: 400
-  Description: 
+  Price: 2.41
+  Description: So, if somethings going wrong, we at least will have a new remix!
   ChanceToBreak: 0

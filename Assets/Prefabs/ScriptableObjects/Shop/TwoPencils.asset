@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89a202f33b33a474c999b449f9c888e0, type: 3}
-  m_Name: Drill
+  m_Name: TwoPencils
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 1b7013240591c4b4490b29c281443c54, type: 3}
-  Name: Drill
-  ProductivityBonus: 30
-  Price: 3.14
-  Description: 'Mom: "you can''t just put a tape on drill and rewind it" Me: "Haha,
-    drill goes brrrrrrrrrr" '
+  Sprite: {fileID: 21300000, guid: 5bfb0105509cfe4429102c57c70691eb, type: 3}
+  Name: TwoPencils
+  ProductivityBonus: 10
+  Price: 0.85
+  Description: 'Twice as much pencils - twice as much proggress! That''s how it works,
+    isn''t it? '
   ChanceToBreak: 0

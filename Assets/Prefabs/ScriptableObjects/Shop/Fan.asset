@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89a202f33b33a474c999b449f9c888e0, type: 3}
-  m_Name: Bycycle
+  m_Name: Fan
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: f71b3199f23dbc147b3667086324c8a1, type: 3}
-  Name: Bycycle
+  Sprite: {fileID: 21300000, guid: 3cb3fcc141a1a3c40a3459eedc1207c1, type: 3}
+  Name: Fan
   ProductivityBonus: 10
-  Price: 100
-  Description: 
+  Price: 1.86
+  Description: 'I''m a big fan of those! '
   ChanceToBreak: 0

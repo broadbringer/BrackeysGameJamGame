@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89a202f33b33a474c999b449f9c888e0, type: 3}
-  m_Name: Loom
+  m_Name: Blender
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: e29bac540b9d0794aa85e8320802cb0b, type: 3}
-  Name: Loom
-  ProductivityBonus: 20
-  Price: 70
-  Description: 
+  Sprite: {fileID: 21300000, guid: fd51af9e13602d646bb8fa5d686fd113, type: 3}
+  Name: Blender
+  ProductivityBonus: 30
+  Price: 4.8
+  Description: 'I thought Blender was free, what a scam '
   ChanceToBreak: 0
