@@ -28,7 +28,7 @@ public class WorkPlaceView : MonoBehaviour
     private void OnEnable()
     {
         if (_isFirstPlay) return;
-        CheckPossibleToBuy();
+        //CheckPossibleToBuy();
     }
 
     private void CheckPossibleToBuy()

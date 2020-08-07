@@ -12,9 +12,11 @@ public class WorkerCreator : MonoBehaviour
     public Queue<WorkPlace> Positions;
     private float time;
 
+    
     private void Start()
     {
         Positions = new Queue<WorkPlace>();
+        gameObject.SetActive(false);
     }
     public void Create()
     {

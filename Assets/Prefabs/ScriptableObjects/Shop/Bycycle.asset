@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: f71b3199f23dbc147b3667086324c8a1, type: 3}
   Name: Bycycle
   ProductivityBonus: 10
-  Durability: 0
-  Type: 1
   Price: 100
+  Description: 
+  ChanceToBreak: 0

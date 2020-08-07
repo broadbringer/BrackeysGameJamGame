@@ -25,7 +25,6 @@ public class WorkPlace : MonoBehaviour,IPointerClickHandler
     {
         Position = GetComponent<Transform>();
         _state = PlaceState.Close;
-        
     }
     
     public void ChangeState()
