@@ -30,6 +30,7 @@ namespace Assets.Scripts.Core
         private static Application _instance;
 
         public InventoryView InventoryView;
+        public WorkerCreator Creator;
         
         public GameSessionData GameSessionData { get; private set; }
         public EventsManager EventsManager { get; private set; }

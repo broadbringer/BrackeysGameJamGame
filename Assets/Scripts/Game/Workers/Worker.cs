@@ -20,7 +20,8 @@ namespace Assets.Scripts.Game.Workers
     
         private Settings _partSettings;
         private EventsManager _eventsManager;
-        
+
+        public float DayIncome;
         private void Start()
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
@@ -46,12 +47,14 @@ namespace Assets.Scripts.Game.Workers
                 if ((int)cassettSurplus == 0)
                 {
                     var scrolledCassettAmount = _calculator.GetScrolledCassetAmount(Productivity);
+                    DayIncome += scrolledCassettAmount;
                     _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
                     RefreshDurabillity();
                 }
                 else
                 {
                     var scrolledCassettAmount = _calculator.GetScrolledCassetAmount(Productivity);
+                    DayIncome += scrolledCassettAmount;
                     _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
                     RefreshDurabillity();
                     CurrentCassetDurabillity -= cassettSurplus;
@@ -63,9 +66,16 @@ namespace Assets.Scripts.Game.Workers
                 if (CurrentCassetDurabillity <= 0)
                 {
                     var scrolledCassettAmount = 1;
+                    DayIncome += scrolledCassettAmount;
                     _eventsManager.OnCassettSpinnedByClickableWorker(scrolledCassettAmount);
                     RefreshDurabillity();
                 }
+            }
+
+            if (WorkItem.TryBreak())
+            {
+                WorkItem = null;
+                Debug.Log("Item Broken");
             }
         }
 

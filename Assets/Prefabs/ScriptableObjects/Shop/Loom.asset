@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: e29bac540b9d0794aa85e8320802cb0b, type: 3}
   Name: Loom
   ProductivityBonus: 20
-  Durability: 0
-  Type: 4
-  Price: 100
+  Price: 70
+  Description: 
+  ChanceToBreak: 0

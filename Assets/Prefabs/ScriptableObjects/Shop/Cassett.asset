@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 9d9329013ccc43a489b6ba3766fe8409, type: 3}
   Name: Cassett
   ProductivityBonus: 20
-  Durability: 0
-  Type: 2
-  Price: 100
+  Price: 200
+  Description: 
+  ChanceToBreak: 0

@@ -14,7 +14,6 @@ public class Shop : MonoBehaviour
     
     private ShopItem[] Items;
     public List<Tool> Tools;
-    public ShopView ShopView;
 
     private GameSessionData _gameData;
     private EventsManager _eventsManager;
@@ -26,10 +25,13 @@ public class Shop : MonoBehaviour
         _eventsManager.BuyButtonPressed += BuyItem;
         Items = GetComponentsInChildren<ShopItem>();
         var index = 0;
-        foreach (var item in Items)
+        
+        foreach (var tool in Tools)
         {
-            item.Info = Tools[index];
-            item.Sprite.sprite = Tools[index].Sprite;
+            Debug.Log("Current tool is " + tool);
+            Debug.Log(Items[index]);
+            Items[index].Info = tool;
+            Items[index].Sprite.sprite = tool.Sprite;
             index++;
         }
     }

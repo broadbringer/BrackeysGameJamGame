@@ -8,12 +8,12 @@ public class Tool : ScriptableObject
     public Sprite Sprite;
     public string Name;
     public float ProductivityBonus;
-    public float Durability;
-    public ItemType Type;
     public float Price;
-     
+    public string Description;
+    
     //от 1 до 100
-    public float ChanceToBreak { get; set; }
+    [Range(0,100)]
+    public float ChanceToBreak;
     
     public bool TryBreak()
     {

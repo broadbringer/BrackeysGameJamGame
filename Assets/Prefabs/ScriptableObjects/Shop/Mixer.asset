@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: cd92f29448953be438fafb5a0d2dd912, type: 3}
   Name: Mixer
   ProductivityBonus: 15
-  Durability: 0
-  Type: 6
-  Price: 100
+  Price: 400
+  Description: 
+  ChanceToBreak: 0

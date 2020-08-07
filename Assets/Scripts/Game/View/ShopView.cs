@@ -16,6 +16,7 @@ public class ShopView : MonoBehaviour
     public TextMeshProUGUI ItemName;
     public TextMeshProUGUI ItemDescription;
     public TextMeshProUGUI ItemProductivity;
+    public TextMeshProUGUI ItemPrice;
     public Button BuyButton;
     
     private EventsManager _eventsManager;
@@ -26,18 +27,22 @@ public class ShopView : MonoBehaviour
     {
         _eventsManager = Application.GetInstance().EventsManager;
         BuyButton.onClick.AddListener(OnBuy);
+        ToolInfoUI.SetActive(false);
     }
 
     private void OnBuy()
     {
         _eventsManager.OnBuyButtonPressed(_currentTool);
+        ToolInfoUI.SetActive(false);
     }
     
     public void OpenInfo(Tool item)
     {
         ToolInfoUI.SetActive(true);
         ItemName.text = item.Name;
+        ItemPrice.text = item.Price.ToString();
         ItemProductivity.text = item.ProductivityBonus.ToString();
+        ItemDescription.text = item.Description;
         _currentTool = item;
         ItemSprite = item.Sprite;
     }

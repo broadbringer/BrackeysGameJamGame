@@ -8,7 +8,8 @@ using Application = Assets.Scripts.Core.Application;
 public class WorkPlace : MonoBehaviour,IPointerClickHandler
 {
     private PlaceState _state;
-
+    
+    public Sprite OpenTableSprite;
     
     [SerializeField] private int _dayToOpen;
     [SerializeField] private WorkPlaceView _view;
@@ -18,18 +19,21 @@ public class WorkPlace : MonoBehaviour,IPointerClickHandler
 
     public float Price => _price;
 
-    public Transform Position;
+    public Transform Position { get; set; }
     
     private void Start()
     {
         Position = GetComponent<Transform>();
         _state = PlaceState.Close;
+        
     }
-
     
     public void ChangeState()
     {
         _state = PlaceState.Open;
+        Application.GetInstance().Creator.Positions.Enqueue(this);
+        _view.gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().sprite = OpenTableSprite;
     }
     
     public void OnPointerClick(PointerEventData eventData)

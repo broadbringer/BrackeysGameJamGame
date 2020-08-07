@@ -7,19 +7,26 @@ using Application = Assets.Scripts.Core.Application;
 public class WorkerCreator : MonoBehaviour
 {
     public Worker WorkerPrefab;
-
     private int WorkerCreated = 0;
     private int MaxCount = 4;
-    public List<WorkPlace> Positions;
+    public Queue<WorkPlace> Positions;
     private float time;
+
+    private void Start()
+    {
+        Positions = new Queue<WorkPlace>();
+    }
     public void Create()
     {
         if (WorkerCreated < MaxCount)
         {
-            var worker = Instantiate(WorkerPrefab, Positions[WorkerCreated].Position.position, Quaternion.identity);
-            Application.GetInstance().GameSessionData.AIWorkers.Add(worker);
-            WorkerCreated++;
+            if (Positions.Count != 0)
+            {
+                var worker = Instantiate(WorkerPrefab, Positions.Dequeue().Position.position, Quaternion.identity);
+                Application.GetInstance().GameSessionData.AIWorkers.Add(worker);
+                WorkerCreated++;
+            }
         }
-        
     }
+    //Тут же и будем проверять есть ли свободные столы.
 }

@@ -19,7 +19,7 @@ public class WorkPlaceView : MonoBehaviour
         PriceText.text = _workPlace.Price.ToString();
         _needableDay.text = _workPlace.DayToOpen.ToString();
         _gameData = Application.GetInstance().GameSessionData;
-        //_Button.onClick.AddListener(_workPlace.ChangeState);
+        _Button.onClick.AddListener(_workPlace.ChangeState);
         gameObject.SetActive(false);
         _isFirstPlay = false;
     }

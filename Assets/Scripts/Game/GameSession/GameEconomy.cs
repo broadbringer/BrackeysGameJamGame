@@ -27,7 +27,7 @@ public class GameEconomy
    private int GetDayCassettGoalInUnsuccessfulDay(GameSessionData gameData)
    {
       var delta = gameData.SpinnedCassettsGoal - gameData.SpinnedCassetts;
-      DayCassetGoal -= delta;
+      DayCassetGoal =  delta;
       return DayCassetGoal;
    }
    public void SetNextDayCassettGoal(GameSessionData gameData)
@@ -48,6 +48,11 @@ public class GameEconomy
    public void SetMoney(GameSessionData gameData)
    {
       gameData.Money += GetIncome(gameData);
+   }
+
+   public void PaySalary(GameSessionData gameData, float value)
+   {
+      gameData.Money -= value;
    }
    #endregion
 }

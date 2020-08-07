@@ -15,6 +15,9 @@
             <e p="EnumerableExtension.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
+            <e p="Camera" t="Include">
+              <e p="CameraMover.cs" t="Include" />
+            </e>
             <e p="GameSession" t="Include">
               <e p="GameEconomy.cs" t="Include" />
               <e p="GameSession.cs" t="Include" />

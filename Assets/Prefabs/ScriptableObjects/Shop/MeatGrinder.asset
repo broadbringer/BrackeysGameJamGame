@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: f9a60f0bfd547cc448099d0991a2e572, type: 3}
   Name: MeatGrinder
   ProductivityBonus: 10
-  Durability: 0
-  Type: 5
-  Price: 100
+  Price: 200
+  Description: 
+  ChanceToBreak: 0

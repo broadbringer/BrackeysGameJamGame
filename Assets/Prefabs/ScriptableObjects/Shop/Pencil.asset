@@ -15,6 +15,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: b3eb2dec9abb98c48bfd86f9712c59e7, type: 3}
   Name: Pencil
   ProductivityBonus: 20
-  Durability: 0
-  Type: 7
-  Price: 100
+  Price: 300
+  Description: 
+  ChanceToBreak: 0
