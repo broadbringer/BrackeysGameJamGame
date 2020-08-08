@@ -34,6 +34,8 @@ namespace Assets.Scripts.Core
         
         public GameSessionData GameSessionData { get; private set; }
         public EventsManager EventsManager { get; private set; }
+
+        public AudioSource audioSource;
     
         public static Application GetInstance()
         {

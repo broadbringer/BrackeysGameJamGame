@@ -15,7 +15,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 5644fcbe60a953440bf1e879a51c702f, type: 3}
   Name: Engine
   ProductivityBonus: 20
-  Price: 5.3
+  Price: 8
   Description: The seller says that it is one of the best engines in the galaxy ...
     It seems that something was wrong with him.
   ChanceToBreak: 0

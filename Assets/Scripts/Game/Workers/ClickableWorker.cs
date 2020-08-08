@@ -13,7 +13,9 @@ namespace Assets.Scripts.Game.Workers
         public Tool WorkItem { get; set; } = null;
         public float Productivity { get; set; }
         public float CurrentCassetDurabillity { get; set; }
-        
+
+        public AudioSource audioSource;
+
         private void Start()
         {
             Productivity = 1.5f;
@@ -68,11 +70,14 @@ namespace Assets.Scripts.Game.Workers
                     RefreshDurabillity();
                 }
             }
+
+            
         }
 
         private void RefreshDurabillity()
         {
             CurrentCassetDurabillity = Application.GetInstance().GameSessionData.CassetDurabillity;
+            audioSource.Play();
         }
     }
 

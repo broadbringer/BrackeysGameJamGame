@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 1b7013240591c4b4490b29c281443c54, type: 3}
   Name: Drill
-  ProductivityBonus: 30
+  ProductivityBonus: 5.3
   Price: 3.14
   Description: 'Mom: "you can''t just put a tape on drill and rewind it" Me: "Haha,
     drill goes brrrrrrrrrr" '

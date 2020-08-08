@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 714595670be175247bafa7e0cfa57aa4, type: 3}
   Name: Mixer
-  ProductivityBonus: 15
+  ProductivityBonus: 4.4
   Price: 2.41
   Description: So, if somethings going wrong, we at least will have a new remix!
   ChanceToBreak: 0

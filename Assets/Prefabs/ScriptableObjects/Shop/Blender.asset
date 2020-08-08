@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: fd51af9e13602d646bb8fa5d686fd113, type: 3}
   Name: Blender
-  ProductivityBonus: 30
+  ProductivityBonus: 6.4
   Price: 4.8
   Description: 'I thought Blender was free, what a scam '
   ChanceToBreak: 0

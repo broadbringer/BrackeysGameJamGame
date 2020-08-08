@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Application = Assets.Scripts.Core.Application;
 
+
 namespace Assets.Scripts.Game.Workers
 {
     public class Worker : MonoBehaviour, IPointerClickHandler, IWorker
@@ -22,6 +23,8 @@ namespace Assets.Scripts.Game.Workers
         private EventsManager _eventsManager;
 
         public float DayIncome;
+
+
         private void Start()
         {
             _partSettings = new Settings(_parts.CustomizationVariants);
@@ -72,11 +75,19 @@ namespace Assets.Scripts.Game.Workers
                 }
             }
 
-            if (WorkItem.TryBreak())
+            if (WorkItem != null)
             {
-                WorkItem = null;
-                Debug.Log("Item Broken");
+                if (WorkItem.TryBreak())
+                {
+                    WorkItem = null;
+                    Debug.Log("Item Broken");
+                }
             }
+
+            
+
+            Application.GetInstance().audioSource.Play();
+
         }
 
         private void RefreshDurabillity()

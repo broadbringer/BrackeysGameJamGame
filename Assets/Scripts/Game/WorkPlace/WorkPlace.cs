@@ -19,11 +19,13 @@ public class WorkPlace : MonoBehaviour,IPointerClickHandler
 
     public float Price => _price;
 
-    public Transform Position { get; set; }
+    public Transform Position;
+
+
     
     private void Start()
     {
-        Position = GetComponent<Transform>();
+        
         _state = PlaceState.Close;
     }
     

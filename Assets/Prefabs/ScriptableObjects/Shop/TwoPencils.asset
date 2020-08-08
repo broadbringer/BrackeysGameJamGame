@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 5bfb0105509cfe4429102c57c70691eb, type: 3}
   Name: TwoPencils
-  ProductivityBonus: 10
+  ProductivityBonus: 2.2
   Price: 0.85
   Description: 'Twice as much pencils - twice as much proggress! That''s how it works,
     isn''t it? '

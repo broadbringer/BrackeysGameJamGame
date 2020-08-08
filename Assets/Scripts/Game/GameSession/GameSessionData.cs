@@ -35,7 +35,7 @@ namespace Assets.Scripts.Game.GameSession
         public Inventory Equipment;
         public GameSessionData()
         {
-            Money = 1000;
+            Money = 0;
             TimeLeft = OneDayInSecond;
             CurrentDay = 1;
             SpinnedCassettsGoal = 20;

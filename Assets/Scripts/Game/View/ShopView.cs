@@ -1,4 +1,8 @@
 ﻿using Assets.Scripts.Core;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using Application = Assets.Scripts.Core.Application;
 
 /// <summary>
 /// View для магазина. Занимается тем, что при нажатии на предмет открывает информацию о нём.
