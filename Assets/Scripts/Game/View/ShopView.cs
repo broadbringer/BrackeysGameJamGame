@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Core;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-using Application = Assets.Scripts.Core.Application;
+﻿using Assets.Scripts.Core;
 
 /// <summary>
 /// View для магазина. Занимается тем, что при нажатии на предмет открывает информацию о нём.
@@ -18,11 +12,11 @@ public class ShopView : MonoBehaviour
     public TextMeshProUGUI ItemProductivity;
     public TextMeshProUGUI ItemPrice;
     public Button BuyButton;
-    
+
     private EventsManager _eventsManager;
 
     private Tool _currentTool;
-    
+
     private void Start()
     {
         _eventsManager = Application.GetInstance().EventsManager;
@@ -35,7 +29,7 @@ public class ShopView : MonoBehaviour
         _eventsManager.OnBuyButtonPressed(_currentTool);
         ToolInfoUI.SetActive(false);
     }
-    
+
     public void OpenInfo(Tool item)
     {
         ToolInfoUI.SetActive(true);

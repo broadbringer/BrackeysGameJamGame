@@ -236,6 +236,7 @@ MonoBehaviour:
     Face: {fileID: 650682505717368583}
     TShirt: {fileID: 650682505712371335}
     Shorts: {fileID: 650682506095049183}
+  DayIncome: 0
 --- !u!61 &6801896626928897945
 BoxCollider2D:
   m_ObjectHideFlags: 0
