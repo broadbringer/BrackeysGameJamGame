@@ -53,6 +53,7 @@ public class GameSession : MonoBehaviour
         PaySalary();
         _gameEconomy.SetNextDayCassettGoal(_gameData);
         _gameEconomy.DayIndex++;
+        _gameData.SpinnedCassetts = 0;
     }
 
     private void PaySalary()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Core;
 using Assets.Scripts.Game.Workers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Application = Assets.Scripts.Core.Application;
@@ -19,8 +20,13 @@ public class InventoryView : MonoBehaviour
       private bool IsFirstPlay = true;
 
       private EventsManager _eventsManager;
-      
-      private void Start()
+
+    [SerializeField] private TextMeshProUGUI _toolName;
+    [SerializeField] private TextMeshProUGUI _toolProductivity;
+    [SerializeField] private TextMeshProUGUI _toolExpences;
+
+
+    private void Start()
       {
        InventorySlots = GetComponentsInChildren<InventoryItem>();
        foreach (var slot in InventorySlots)
@@ -59,6 +65,9 @@ public class InventoryView : MonoBehaviour
          if (CurrentWorkerTool != null)
          {
              CurrentWorkerToolImage.sprite = CurrentWorkerTool.Sprite;
+            _toolName.text = CurrentWorkerTool.Name;
+            _toolProductivity.text = CurrentWorkerTool.ProductivityBonus.ToString();
+            _toolExpences.text = (CurrentWorkerTool.ProductivityBonus * 3 * 0.1f).ToString();
          }
          else
          {
